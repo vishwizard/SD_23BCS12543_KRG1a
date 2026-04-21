@@ -1,0 +1,522 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="StockVerse HLD" id="stockverse-hld-001">
+    <mxGraphModel dx="1097" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;&lt;b&gt;📈 StockVerse — High-Level Design (HLD)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;AI-Powered Stock Market Simulator | MERN + TailwindCSS + Google Gemini&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="900" x="350" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="user-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;whiteSpace=wrap;fontColor=#FFFFFF;" value="User&lt;br&gt;(Browser / Mobile)" vertex="1">
+          <mxGeometry height="70" width="50" x="100" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="300" width="320" x="250" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontColor=#000000;" value="&lt;b&gt;🖥️ Frontend (Client)&lt;/b&gt;&lt;br&gt;React 18 + Vite + TailwindCSS" vertex="1">
+          <mxGeometry height="40" width="280" x="270" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-pages" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=center;fontColor=#000000;" value="&lt;b&gt;Pages (12)&lt;/b&gt;&lt;br&gt;Landing, Login, Register&lt;br&gt;Dashboard, Portfolio&lt;br&gt;StockDetail, Watchlist&lt;br&gt;Leaderboard, AIAdvisor&lt;br&gt;News, Screener, Profile" vertex="1">
+          <mxGeometry height="110" width="140" x="270" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-components" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=center;fontColor=#000000;" value="&lt;b&gt;Components (10)&lt;/b&gt;&lt;br&gt;Navbar, StockChart&lt;br&gt;TradeModal, AIChatbot&lt;br&gt;PortfolioPieChart&lt;br&gt;SentimentMeter&lt;br&gt;NewsCard, StockCard&lt;br&gt;AchievementBadge" vertex="1">
+          <mxGeometry height="110" width="140" x="420" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-context" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000;" value="&lt;b&gt;AuthContext&lt;/b&gt;&lt;br&gt;(JWT State Mgmt)" vertex="1">
+          <mxGeometry height="45" width="130" x="270" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="fe-api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontColor=#000000;" value="&lt;b&gt;Axios API Service&lt;/b&gt;&lt;br&gt;+ Interceptors" vertex="1">
+          <mxGeometry height="45" width="140" x="420" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-fe" edge="1" parent="1" source="user-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" target="frontend-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-fe-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#FFFFFF;fontStyle=1;" value="HTTPS" vertex="1">
+          <mxGeometry height="20" width="60" x="170" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="200" width="200" x="660" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;🔒 API Gateway / Middleware&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="190" x="665" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="mw-cors" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;fontColor=#000000;" value="CORS" vertex="1">
+          <mxGeometry height="30" width="80" x="675" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="mw-jwt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;fontColor=#000000;" value="JWT Auth" vertex="1">
+          <mxGeometry height="30" width="80" x="765" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="mw-rate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;fontColor=#000000;" value="Rate Limiter" vertex="1">
+          <mxGeometry height="30" width="80" x="675" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="mw-json" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;fontColor=#000000;" value="JSON Parser" vertex="1">
+          <mxGeometry height="30" width="80" x="765" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="mw-protect" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#000000;" value="&lt;b&gt;protect()&lt;/b&gt; middleware&lt;br&gt;Token verification&lt;br&gt;User injection to req" vertex="1">
+          <mxGeometry height="50" width="170" x="675" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-fe-gw" edge="1" parent="1" source="fe-api" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d6b656;fontColor=#000000;" target="gateway-box">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-fe-gw-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#000000;fontStyle=1;" value="REST API&lt;br&gt;/api/*" vertex="1">
+          <mxGeometry height="30" width="70" x="580" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="server-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="500" width="280" x="940" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="server-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;⚙️ Express.js Server&lt;/b&gt;&lt;br&gt;Node.js Backend (Port 5000)" vertex="1">
+          <mxGeometry height="35" width="240" x="960" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="route-auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/auth&lt;/b&gt;&lt;br&gt;Register, Login&lt;br&gt;Profile, Reset" vertex="1">
+          <mxGeometry height="55" width="120" x="955" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="route-stocks" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/stocks&lt;/b&gt;&lt;br&gt;Quote, Search&lt;br&gt;History, Trending&lt;br&gt;Profile, Market Status" vertex="1">
+          <mxGeometry height="55" width="120" x="1090" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="route-trading" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/trading&lt;/b&gt;&lt;br&gt;Buy, Sell&lt;br&gt;Transaction History&lt;br&gt;Achievement Check" vertex="1">
+          <mxGeometry height="60" width="120" x="955" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="route-portfolio" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/portfolio&lt;/b&gt;&lt;br&gt;Live Valuation&lt;br&gt;Performance&lt;br&gt;P&amp;amp;L Calculation" vertex="1">
+          <mxGeometry height="60" width="120" x="1090" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="route-watchlist" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/watchlist&lt;/b&gt;&lt;br&gt;Add, Remove&lt;br&gt;Live Prices" vertex="1">
+          <mxGeometry height="50" width="120" x="955" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="route-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=0;fontColor=#000000;" value="&lt;b&gt;/api/ai&lt;/b&gt;&lt;br&gt;Analyze, Chat&lt;br&gt;Portfolio Insights&lt;br&gt;Sentiment Analysis" vertex="1">
+          <mxGeometry height="55" width="120" x="1090" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="route-news" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/news&lt;/b&gt;&lt;br&gt;Market News&lt;br&gt;Company News" vertex="1">
+          <mxGeometry height="50" width="120" x="955" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="route-leaderboard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;/api/leaderboard&lt;/b&gt;&lt;br&gt;Rankings by P&amp;amp;L&lt;br&gt;Trades, Level/XP" vertex="1">
+          <mxGeometry height="50" width="120" x="1090" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="svc-stock" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;stockService.js&lt;/b&gt;&lt;br&gt;API calls + NodeCache" vertex="1">
+          <mxGeometry height="40" width="120" x="955" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="svc-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#000000;" value="&lt;b&gt;aiService.js&lt;/b&gt;&lt;br&gt;Gemini Prompts" vertex="1">
+          <mxGeometry height="40" width="120" x="1090" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-gw-server" edge="1" parent="1" source="gateway-box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;fontColor=#000000;" target="server-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-gw-server-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#000000;fontStyle=1;" value="Authenticated&lt;br&gt;Request" vertex="1">
+          <mxGeometry height="30" width="70" x="870" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="mongo-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="230" width="350" x="660" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="mongo-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontColor=#000000;" value="&lt;b&gt;🗄️ MongoDB (Database Layer)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="230" x="720" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="mongo-icon" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="55" width="50" x="675" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="model-user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;fontColor=#000000;" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;name, email, password&lt;br&gt;balance, holdings[]&lt;br&gt;achievements[], XP&lt;br&gt;level, totalTrades&lt;br&gt;profitableTrades, totalPnL" vertex="1">
+          <mxGeometry height="90" width="160" x="740" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="model-transaction" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;fontColor=#000000;spacingLeft=5;spacingBottom=5;spacingRight=5;" value="&lt;b&gt;Transaction&lt;/b&gt;&lt;br&gt;user, symbol, name&lt;br&gt;type (BUY/SELL)&lt;br&gt;quantity, price, total, pnl" vertex="1">
+          <mxGeometry height="60" width="170" x="735" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="model-watchlist" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;fontColor=#000000;" value="&lt;b&gt;Watchlist&lt;/b&gt;&lt;br&gt;user, symbol, name&lt;br&gt;alertPrice, notes" vertex="1">
+          <mxGeometry height="55" width="90" x="910" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-mongo" edge="1" parent="1" source="server-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#000000;" target="mongo-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-mongo-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#000000;fontStyle=1;" value="Mongoose&lt;br&gt;ODM" vertex="1">
+          <mxGeometry height="30" width="70" x="840" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;⚡ NodeCache&lt;/b&gt;&lt;br&gt;&lt;br&gt;Quotes: 60s TTL&lt;br&gt;Search: 300s TTL&lt;br&gt;Company: 3600s TTL&lt;br&gt;History: 900s TTL&lt;br&gt;News: 300s TTL" vertex="1">
+          <mxGeometry height="120" width="130" x="1300" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-cache" edge="1" parent="1" source="svc-stock" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;fontColor=#000000;" target="cache-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1270" y="475" />
+              <mxPoint x="1270" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-server-cache-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#000000;fontStyle=1;" value="Cache Check&lt;br&gt;Before API Call" vertex="1">
+          <mxGeometry height="30" width="80" x="1245" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="310" width="260" x="1300" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;🌐 External APIs (Free Tier)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="220" x="1320" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="api-finnhub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4a90d9;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🔹 Finnhub API&lt;/b&gt;&lt;br&gt;Real-time Quotes&lt;br&gt;Stock Search&lt;br&gt;Company Profile&lt;br&gt;Market News&lt;br&gt;Company News&lt;br&gt;&lt;i&gt;60 calls/min (free)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="100" width="115" x="1315" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="api-alphavantage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🔸 Alpha Vantage&lt;/b&gt;&lt;br&gt;Historical Data&lt;br&gt;Daily/Weekly/Monthly&lt;br&gt;Time Series&lt;br&gt;&lt;i&gt;25 calls/day (free)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="100" width="115" x="1435" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="api-gemini" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🤖 Google Gemini AI&lt;/b&gt;&lt;br&gt;(gemini-1.5-flash)&lt;br&gt;Stock Analysis&lt;br&gt;AI Chatbot&lt;br&gt;Portfolio Insights&lt;br&gt;Sentiment Analysis&lt;br&gt;&lt;i&gt;15 RPM, 1M tokens/day&lt;/i&gt;" vertex="1">
+          <mxGeometry height="110" width="115" x="1315" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="api-newsapi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#e57373;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;📰 News API&lt;/b&gt;&lt;br&gt;(via Finnhub)&lt;br&gt;Market Headlines&lt;br&gt;Category Filter" vertex="1">
+          <mxGeometry height="70" width="115" x="1435" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-finnhub" edge="1" parent="1" source="svc-stock" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4a90d9;dashed=1;fontColor=#000000;" target="api-finnhub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-alpha" edge="1" parent="1" source="svc-stock" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#f9a825;dashed=1;fontColor=#000000;" target="api-alphavantage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-server-gemini" edge="1" parent="1" source="svc-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;dashed=1;fontColor=#000000;" target="api-gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-auth-mongo" edge="1" parent="1" source="route-auth" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#b85450;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontColor=#000000;" target="model-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="660" />
+              <mxPoint x="820" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-trading-user" edge="1" parent="1" source="route-trading" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b85450;dashed=1;fontColor=#000000;" target="model-transaction">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="660" />
+              <mxPoint x="820" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jwt-flow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;opacity=40;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="120" width="320" x="250" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="jwt-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;🔐 JWT Authentication Flow&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="220" x="300" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="jwt-steps" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#000000;" value="1️⃣ User sends email + password&lt;br&gt;2️⃣ Server validates → bcrypt compare&lt;br&gt;3️⃣ Server issues JWT (30d expiry)&lt;br&gt;4️⃣ Client stores in localStorage&lt;br&gt;5️⃣ All requests include Bearer token&lt;br&gt;6️⃣ Middleware decodes → injects user to req" vertex="1">
+          <mxGeometry height="75" width="290" x="265" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="game-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=1;dashPattern=5 5;opacity=30;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="200" width="230" x="1100" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="game-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;🎮 Gamification Engine&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="170" x="1130" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="game-xp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;XP System&lt;/b&gt;&lt;br&gt;Trade: +20 XP&lt;br&gt;Profit: +10 XP&lt;br&gt;Achievement: +100 XP" vertex="1">
+          <mxGeometry height="60" width="105" x="1110" y="738" as="geometry" />
+        </mxCell>
+        <mxCell id="game-level" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;Levels&lt;/b&gt;&lt;br&gt;Level = XP / 200 + 1&lt;br&gt;Progress bar UI" vertex="1">
+          <mxGeometry height="60" width="105" x="1218" y="738" as="geometry" />
+        </mxCell>
+        <mxCell id="game-achieve" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;align=center;fontColor=#000000;" value="&lt;b&gt;Achievements (9)&lt;/b&gt;&lt;br&gt;🎉 Welcome | 📈 First Steps&lt;br&gt;🔥 Active | ⚡ Machine&lt;br&gt;💰 Money Maker | 🎯 Diversified&lt;br&gt;🐋 Whale | 💎 Grand | 🏆 Diamond" vertex="1">
+          <mxGeometry height="60" width="213" x="1110" y="808" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-trading-game" edge="1" parent="1" source="route-trading" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;dashed=1;fontColor=#000000;" target="game-group">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="280" />
+              <mxPoint x="1060" y="660" />
+              <mxPoint x="1215" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-trading-game-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#000000;fontStyle=1;" value="checkAchievements()&lt;br&gt;on every trade" vertex="1">
+          <mxGeometry height="30" width="110" x="1045" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-detail-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;dashed=1;dashPattern=5 5;opacity=25;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="210" width="350" x="250" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-detail-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#000000;" value="&lt;b&gt;🤖 AI Features (Gemini 1.5 Flash)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="270" x="290" y="708" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-f1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=9;align=left;fontColor=#000000;" value="&lt;b&gt;1. analyzeStock()&lt;/b&gt;&lt;br&gt;Input: Price + News Headlines&lt;br&gt;Output: Recommendation,&lt;br&gt;Risk, Support/Resistance,&lt;br&gt;Confidence Score (0-100%)" vertex="1">
+          <mxGeometry height="75" width="160" x="260" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-f2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=9;align=left;fontColor=#000000;" value="&lt;b&gt;2. chatWithAI()&lt;/b&gt;&lt;br&gt;Input: User message + context&lt;br&gt;Output: Educational response&lt;br&gt;(portfolio-aware)" vertex="1">
+          <mxGeometry height="65" width="160" x="430" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-f3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=9;align=left;fontColor=#000000;" value="&lt;b&gt;3. getPortfolioInsights()&lt;/b&gt;&lt;br&gt;Input: All holdings + balance&lt;br&gt;Output: Health Score, Risk,&lt;br&gt;Diversification, Recommendation" vertex="1">
+          <mxGeometry height="65" width="160" x="260" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-f4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=9;align=left;fontColor=#000000;" value="&lt;b&gt;4. analyzeSentiment()&lt;/b&gt;&lt;br&gt;Input: News headlines[]&lt;br&gt;Output: Bullish/Bearish/Neutral&lt;br&gt;Score: -100 to +100" vertex="1">
+          <mxGeometry height="65" width="160" x="430" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="api-section-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;📋 API Endpoints&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="300" x="100" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoints" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 12px; padding: 5px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;b style=&quot;&quot;&gt;Auth&lt;/b&gt;&lt;br&gt;POST /api/auth/register&lt;br&gt;POST /api/auth/login&lt;br&gt;GET  /api/auth/profile 🔒&lt;br&gt;PUT  /api/auth/profile 🔒&lt;br&gt;POST /api/auth/reset 🔒&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;Stocks&lt;/b&gt;&lt;br&gt;GET /api/stocks/search?q={query}&lt;br&gt;GET /api/stocks/quote/{symbol}&lt;br&gt;GET /api/stocks/profile/{symbol}&lt;br&gt;GET /api/stocks/history/{symbol}?interval={daily|weekly|monthly}&lt;br&gt;GET /api/stocks/trending&lt;br&gt;GET /api/stocks/market-status&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;Trading&lt;/b&gt;&lt;br&gt;POST /api/trading/buy 🔒 {symbol, quantity}&lt;br&gt;POST /api/trading/sell 🔒 {symbol, quantity}&lt;br&gt;GET  /api/trading/history 🔒 ?page=&amp;amp;limit=&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="320" width="380" x="100" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoints-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 12px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Portfolio&lt;/b&gt;&lt;br&gt;GET /api/portfolio 🔒&lt;br&gt;GET /api/portfolio/performance 🔒&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;Watchlist&lt;/b&gt;&lt;br&gt;GET    /api/watchlist 🔒&lt;br&gt;POST   /api/watchlist 🔒 {symbol, name}&lt;br&gt;DELETE /api/watchlist/{symbol} 🔒&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;AI (Gemini)&lt;/b&gt;&lt;br&gt;GET  /api/ai/analyze/{symbol} 🔒&lt;br&gt;POST /api/ai/chat 🔒 {message}&lt;br&gt;GET  /api/ai/portfolio-insights 🔒&lt;br&gt;POST /api/ai/sentiment 🔒 {headlines[]}&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;News&lt;/b&gt;&lt;br&gt;GET /api/news/market?category={general|forex|crypto}&lt;br&gt;GET /api/news/company/{symbol}&lt;br&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;Leaderboard&lt;/b&gt;&lt;br&gt;GET /api/leaderboard?type={pnl|trades|level}&lt;br&gt;&lt;br&gt;🔒 = Requires JWT Bearer Token&lt;/div&gt;" vertex="1">
+          <mxGeometry height="320" width="380" x="500" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;🗃️ MongoDB Schema Design&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="350" x="100" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;📦 User&lt;/b&gt;&lt;br&gt;&lt;br&gt;_id: ObjectId (PK)&lt;br&gt;name: String (required, trim)&lt;br&gt;email: String (required, unique)&lt;br&gt;password: String (bcrypt hashed)&lt;br&gt;avatar: String&lt;br&gt;balance: Number (default: 100000)&lt;br&gt;initialBalance: Number (100000)&lt;br&gt;&lt;br&gt;&lt;b&gt;holdings: [&lt;/b&gt;&lt;br&gt;&amp;nbsp; { symbol, name, quantity,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;avgPrice, totalInvested }&lt;br&gt;&lt;b&gt;]&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;achievements: [&lt;/b&gt;&lt;br&gt;&amp;nbsp; { id, title, description,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;icon, unlockedAt }&lt;br&gt;&lt;b&gt;]&lt;/b&gt;&lt;br&gt;&lt;br&gt;totalTrades: Number (0)&lt;br&gt;profitableTrades: Number (0)&lt;br&gt;totalPnL: Number (0)&lt;br&gt;level: Number (1)&lt;br&gt;xp: Number (0)&lt;br&gt;createdAt, updatedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="380" width="220" x="100" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-transaction" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;📦 Transaction&lt;/b&gt;&lt;br&gt;&lt;br&gt;_id: ObjectId (PK)&lt;br&gt;user: ObjectId → User (FK)&lt;br&gt;symbol: String (required)&lt;br&gt;name: String (required)&lt;br&gt;type: Enum [&quot;BUY&quot;, &quot;SELL&quot;]&lt;br&gt;quantity: Number&lt;br&gt;price: Number&lt;br&gt;total: Number&lt;br&gt;pnl: Number (SELL only)&lt;br&gt;createdAt, updatedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="220" x="340" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-watchlist" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacingLeft=10;spacingTop=5;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 11px;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;📦 Watchlist&lt;/b&gt;&lt;br&gt;&lt;br&gt;_id: ObjectId (PK)&lt;br&gt;user: ObjectId → User (FK)&lt;br&gt;symbol: String (required)&lt;br&gt;name: String (required)&lt;br&gt;addedAt: Date&lt;br&gt;alertPrice: Number (null)&lt;br&gt;notes: String&lt;br&gt;createdAt, updatedAt&lt;br&gt;&lt;br&gt;&lt;b&gt;Index:&lt;/b&gt; { user, symbol } UNIQUE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="220" x="580" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-rel-1" edge="1" parent="1" source="schema-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontColor=#000000;" target="schema-transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="schema-rel-2" edge="1" parent="1" source="schema-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontColor=#000000;" target="schema-watchlist">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="1830" />
+              <mxPoint x="690" y="1830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fr-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;✅ Functional Requirements&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="400" x="100" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="fr-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;spacingRight=15;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 13px; line-height: 1.8;&quot;&gt;&lt;b&gt;Authentication:&lt;/b&gt; Users must register/login with email &amp;amp; password. JWT-based session management with 30-day token expiry.&lt;br&gt;&lt;br&gt;&lt;b&gt;Stock Discovery:&lt;/b&gt; Users can search stocks by symbol or name, view real-time quotes, historical charts (daily/weekly/monthly), company profiles, and trending stocks.&lt;br&gt;&lt;br&gt;&lt;b&gt;Paper Trading:&lt;/b&gt; Users start with \$100,000 virtual cash. They can buy and sell stocks at real-time market prices. System tracks quantity, average cost, P&amp;amp;L per holding.&lt;br&gt;&lt;br&gt;&lt;b&gt;Portfolio Management:&lt;/b&gt; Live portfolio valuation with current prices, total P&amp;amp;L, day change, win rate, net worth, and allocation chart.&lt;br&gt;&lt;br&gt;&lt;b&gt;AI Analysis:&lt;/b&gt; AI-powered stock recommendations (Strong Buy → Strong Sell), risk assessment, sentiment analysis, portfolio health scoring, and educational chatbot.&lt;br&gt;&lt;br&gt;&lt;b&gt;Watchlist:&lt;/b&gt; Users can add/remove stocks to track, with live price updates.&lt;br&gt;&lt;br&gt;&lt;b&gt;Gamification:&lt;/b&gt; XP earned from trades, level progression, 9 achievement badges unlocked automatically.&lt;br&gt;&lt;br&gt;&lt;b&gt;Leaderboard:&lt;/b&gt; Global rankings sorted by P&amp;amp;L, total trades, or level/XP.&lt;br&gt;&lt;br&gt;&lt;b&gt;News:&lt;/b&gt; Real-time market news and company-specific news with AI sentiment analysis.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="420" width="700" x="100" y="1920" as="geometry" />
+        </mxCell>
+        <mxCell id="nfr-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;⚡ Non-Functional Requirements&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="450" x="100" y="2380" as="geometry" />
+        </mxCell>
+        <mxCell id="nfr-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;spacingRight=15;fontColor=#000000;" value="&lt;div style=&quot;text-align: left; font-size: 13px; line-height: 1.8;&quot;&gt;&lt;b&gt;Performance:&lt;/b&gt; Server-side caching with NodeCache (60s–3600s TTL per endpoint). Parallel API calls using Promise.allSettled to prevent waterfalls.&lt;br&gt;&lt;br&gt;&lt;b&gt;Security:&lt;/b&gt; Passwords hashed with bcrypt (12 salt rounds). JWT authentication for all protected routes. Rate limiting: 60 req/min for APIs, 10 req/15min for auth.&lt;br&gt;&lt;br&gt;&lt;b&gt;Availability:&lt;/b&gt; Graceful error handling — if one API fails (e.g., Alpha Vantage), the page still renders with available data. Cache serves stale data during API outages.&lt;br&gt;&lt;br&gt;&lt;b&gt;Consistency:&lt;/b&gt; Trading operations (buy/sell) are atomic at the MongoDB document level. Balance checks prevent overspending. Quantity checks prevent overselling.&lt;br&gt;&lt;br&gt;&lt;b&gt;Scalability:&lt;/b&gt; Stateless JWT auth allows horizontal scaling. MongoDB supports sharding. Cache reduces external API load by ~90%.&lt;br&gt;&lt;br&gt;&lt;b&gt;Responsiveness:&lt;/b&gt; Fully responsive UI (mobile + desktop). TailwindCSS utility classes. Vite for sub-second HMR during development.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="440" width="700" x="100" y="2420" as="geometry" />
+        </mxCell>
+        <mxCell id="trade-flow-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;💹 Buy/Sell Trade Flow&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="350" x="950" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#000000;" value="&lt;b&gt;1&lt;/b&gt; User clicks Buy/Sell&lt;br&gt;in TradeModal" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#000000;" value="&lt;b&gt;2&lt;/b&gt; POST /api/trading/buy&lt;br&gt;{symbol, quantity}" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4a90d9;fontSize=10;fontColor=#000000;" value="&lt;b&gt;3&lt;/b&gt; Fetch live price&lt;br&gt;from Finnhub API" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#000000;" value="&lt;b&gt;4&lt;/b&gt; Validate balance&lt;br&gt;(BUY) or shares (SELL)" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1185" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#000000;" value="&lt;b&gt;5&lt;/b&gt; Update User doc:&lt;br&gt;balance, holdings[]" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontColor=#000000;" value="&lt;b&gt;6&lt;/b&gt; Create Transaction&lt;br&gt;document (history)" vertex="1">
+          <mxGeometry height="40" width="140" x="950" y="1295" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontColor=#000000;" value="&lt;b&gt;7&lt;/b&gt; checkAchievements()&lt;br&gt;Award XP + badges" vertex="1">
+          <mxGeometry height="40" width="140" x="1130" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontColor=#000000;" value="&lt;b&gt;8&lt;/b&gt; Return response:&lt;br&gt;balance, holdings,&lt;br&gt;newAchievements[]" vertex="1">
+          <mxGeometry height="50" width="140" x="1130" y="1295" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e1" edge="1" parent="1" source="tf-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="tf-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e2" edge="1" parent="1" source="tf-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="tf-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e3" edge="1" parent="1" source="tf-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="tf-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e4" edge="1" parent="1" source="tf-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="tf-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e5" edge="1" parent="1" source="tf-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="tf-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e6" edge="1" parent="1" source="tf-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;dashed=1;fontColor=#000000;" target="tf-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e7" edge="1" parent="1" source="tf-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;fontColor=#000000;" target="tf-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-e8" edge="1" parent="1" source="tf-6" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;fontColor=#000000;" target="tf-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-flow-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;🤖 AI Stock Analysis Flow&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="400" x="950" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="af-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#000000;" value="&lt;b&gt;1&lt;/b&gt; User clicks&lt;br&gt;&quot;AI Analysis&quot; button" vertex="1">
+          <mxGeometry height="40" width="130" x="950" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="af-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontColor=#000000;" value="&lt;b&gt;2&lt;/b&gt; GET /api/ai/analyze/{symbol}&lt;br&gt;🔒 Protected" vertex="1">
+          <mxGeometry height="40" width="160" x="950" y="1505" as="geometry" />
+        </mxCell>
+        <mxCell id="af-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f3ff;strokeColor=#4a90d9;fontSize=10;align=left;fontColor=#000000;" value="&lt;b&gt;3&lt;/b&gt; Parallel fetch:&lt;br&gt;• getQuote(symbol) → Finnhub&lt;br&gt;• getCompanyNews(symbol) → Finnhub" vertex="1">
+          <mxGeometry height="55" width="210" x="950" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="af-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;align=left;fontColor=#000000;" value="&lt;b&gt;4&lt;/b&gt; Build prompt:&lt;br&gt;Price data + News headlines&lt;br&gt;→ Structured analysis request" vertex="1">
+          <mxGeometry height="50" width="210" x="950" y="1630" as="geometry" />
+        </mxCell>
+        <mxCell id="af-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;fontColor=#000000;" value="&lt;b&gt;5&lt;/b&gt; Send to Gemini 1.5 Flash&lt;br&gt;model.generateContent(prompt)" vertex="1">
+          <mxGeometry height="40" width="210" x="950" y="1695" as="geometry" />
+        </mxCell>
+        <mxCell id="af-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;fontColor=#000000;" value="&lt;b&gt;6&lt;/b&gt; Parse JSON from AI response:&lt;br&gt;• technicalSummary&lt;br&gt;• newsSentiment + explanation&lt;br&gt;• support / resistance&lt;br&gt;• riskLevel (Low/Med/High)&lt;br&gt;• shortTermOutlook&lt;br&gt;• recommendation (Buy/Hold/Sell)&lt;br&gt;• confidenceScore (0-100%)" vertex="1">
+          <mxGeometry height="120" width="220" x="950" y="1750" as="geometry" />
+        </mxCell>
+        <mxCell id="af-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontColor=#000000;" value="&lt;b&gt;7&lt;/b&gt; Return structured&lt;br&gt;analysis to client&lt;br&gt;→ Render AI cards + gauges" vertex="1">
+          <mxGeometry height="50" width="180" x="950" y="1885" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e1" edge="1" parent="1" source="af-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="af-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e2" edge="1" parent="1" source="af-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="af-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e3" edge="1" parent="1" source="af-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#666;fontColor=#000000;" target="af-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e4" edge="1" parent="1" source="af-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;fontColor=#000000;" target="af-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e5" edge="1" parent="1" source="af-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;fontColor=#000000;" target="af-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af-e6" edge="1" parent="1" source="af-6" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;fontColor=#000000;" target="af-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-detail-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;⚡ Caching Strategy (NodeCache)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="450" x="950" y="1970" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-table" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=5;spacingTop=5;overflow=fill;fontColor=#000000;" value="&lt;table style=&quot;font-size: 12px; border-collapse: collapse; width: 100%;&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background: rgb(215, 155, 0);&quot;&gt;&lt;th style=&quot;padding: 8px; text-align: left;&quot;&gt;Cache Key Pattern&lt;/th&gt;&lt;th style=&quot;padding: 8px;&quot;&gt;TTL&lt;/th&gt;&lt;th style=&quot;padding: 8px;&quot;&gt;Source API&lt;/th&gt;&lt;th style=&quot;padding: 8px;&quot;&gt;Purpose&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;quote_{symbol}&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd; text-align: center;&quot;&gt;60s&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Finnhub&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Real-time price&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;search_{query}&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd; text-align: center;&quot;&gt;300s&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Finnhub&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Stock search results&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;profile_{symbol}&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd; text-align: center;&quot;&gt;3600s&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Finnhub&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Company info (rarely changes)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;history_{symbol}_{interval}&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd; text-align: center;&quot;&gt;900s&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Alpha Vantage&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Price charts (25/day limit)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;news_{category}&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd; text-align: center;&quot;&gt;300s&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Finnhub&lt;/td&gt;&lt;td style=&quot;padding: 6px; border-bottom: 1px solid #ddd;&quot;&gt;Market news&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;padding: 6px;&quot;&gt;companynews_{symbol}&lt;/td&gt;&lt;td style=&quot;padding: 6px; text-align: center;&quot;&gt;300s&lt;/td&gt;&lt;td style=&quot;padding: 6px;&quot;&gt;Finnhub&lt;/td&gt;&lt;td style=&quot;padding: 6px;&quot;&gt;Company-specific news&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="210" width="500" x="950" y="2010" as="geometry" />
+        </mxCell>
+        <mxCell id="tech-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;🛠️ Tech Stack Summary&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="350" x="950" y="2260" as="geometry" />
+        </mxCell>
+        <mxCell id="tech-fe-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;spacingTop=8;fontColor=#000000;" value="&lt;div style=&quot;font-size: 12px; text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Frontend&lt;/b&gt;&lt;br&gt;&lt;br&gt;⚛️ React 18&lt;br&gt;⚡ Vite&lt;br&gt;🎨 TailwindCSS&lt;br&gt;📊 Chart.js&lt;br&gt;🧭 React Router v6&lt;br&gt;🔔 React Hot Toast&lt;br&gt;🎨 React Icons&lt;br&gt;📡 Axios&lt;/div&gt;" vertex="1">
+          <mxGeometry height="175" width="140" x="950" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="tech-be-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;spacingTop=8;fontColor=#000000;" value="&lt;div style=&quot;font-size: 12px; text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Backend&lt;/b&gt;&lt;br&gt;&lt;br&gt;🟢 Node.js&lt;br&gt;🚂 Express.js&lt;br&gt;🔐 JWT&lt;br&gt;🔒 bcryptjs&lt;br&gt;⚡ NodeCache&lt;br&gt;🛡️ express-rate-limit&lt;br&gt;🌐 CORS&lt;br&gt;📡 Axios&lt;/div&gt;" vertex="1">
+          <mxGeometry height="175" width="140" x="1110" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="tech-db-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;verticalAlign=top;spacingTop=8;fontColor=#000000;" value="&lt;div style=&quot;font-size: 12px; text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Database&lt;/b&gt;&lt;br&gt;&lt;br&gt;🍃 MongoDB&lt;br&gt;🔗 Mongoose ODM&lt;br&gt;&lt;br&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;AI&lt;/b&gt;&lt;br&gt;&lt;br&gt;🤖 Google Gemini&lt;br&gt;&amp;nbsp;&amp;nbsp; 1.5 Flash&lt;br&gt;📦 @google/&lt;br&gt;&amp;nbsp;&amp;nbsp; generative-ai&lt;/div&gt;" vertex="1">
+          <mxGeometry height="175" width="140" x="1270" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="tech-api-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=top;spacingTop=8;fontColor=#000000;" value="&lt;div style=&quot;font-size: 12px; text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;External APIs&lt;/b&gt;&lt;br&gt;&lt;br&gt;🔹 Finnhub&lt;br&gt;&amp;nbsp;&amp;nbsp;(Quotes, News)&lt;br&gt;🔸 Alpha Vantage&lt;br&gt;&amp;nbsp;&amp;nbsp;(History)&lt;br&gt;🤖 Gemini AI&lt;br&gt;&amp;nbsp;&amp;nbsp;(Analysis)&lt;br&gt;&lt;br&gt;&lt;i&gt;All free tier&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="175" width="130" x="1430" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;🚀 Deployment Architecture&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="400" x="950" y="2520" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-client" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;align=center;fontColor=#000000;" value="&lt;b&gt;Client (Vercel/Netlify)&lt;/b&gt;&lt;br&gt;Static build (dist/)&lt;br&gt;CDN distributed&lt;br&gt;VITE_API_URL env var" vertex="1">
+          <mxGeometry height="70" width="160" x="950" y="2570" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-server" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;fontColor=#000000;" value="&lt;b&gt;Server (Render/Railway)&lt;/b&gt;&lt;br&gt;Node.js runtime&lt;br&gt;Environment variables&lt;br&gt;Auto-deploy from Git" vertex="1">
+          <mxGeometry height="70" width="160" x="1150" y="2570" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=center;fontColor=#000000;" value="&lt;b&gt;MongoDB Atlas&lt;/b&gt;&lt;br&gt;Free M0 cluster&lt;br&gt;512 MB storage&lt;br&gt;Cloud hosted" vertex="1">
+          <mxGeometry height="70" width="160" x="1350" y="2570" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-e1" edge="1" parent="1" source="deploy-client" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6c8ebf;fontColor=#000000;" target="deploy-server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-e1-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#000000;fontStyle=1;" value="API calls" vertex="1">
+          <mxGeometry height="15" width="50" x="1115" y="2555" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-e2" edge="1" parent="1" source="deploy-server" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;fontColor=#000000;" target="deploy-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-e2-label" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#000000;fontStyle=1;" value="Mongoose" vertex="1">
+          <mxGeometry height="15" width="50" x="1315" y="2555" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#FFFFFF;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;🏆 Unique Selling Points (USPs)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="35" width="450" x="215" y="2910" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🤖 AI Stock Advisor&lt;/b&gt;&lt;br&gt;Gemini-powered analysis with&lt;br&gt;confidence scores &amp;amp; recommendations" vertex="1">
+          <mxGeometry height="60" width="180" x="115" y="2960" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;💬 AI Chatbot&lt;/b&gt;&lt;br&gt;Context-aware floating chatbot&lt;br&gt;for stock education" vertex="1">
+          <mxGeometry height="60" width="180" x="305" y="2960" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8d5f5;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;📊 Sentiment Analysis&lt;/b&gt;&lt;br&gt;AI scores news headlines&lt;br&gt;from -100 to +100" vertex="1">
+          <mxGeometry height="60" width="180" x="495" y="2960" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🎮 Full Gamification&lt;/b&gt;&lt;br&gt;XP, Levels, 9 Achievements,&lt;br&gt;Progress bars" vertex="1">
+          <mxGeometry height="60" width="180" x="115" y="3030" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🏆 Competitive Leaderboard&lt;/b&gt;&lt;br&gt;Rankings by P&amp;amp;L, trades,&lt;br&gt;or level with podium UI" vertex="1">
+          <mxGeometry height="60" width="180" x="305" y="3030" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🧠 AI Portfolio Health&lt;/b&gt;&lt;br&gt;Diversification rating,&lt;br&gt;risk scoring, recommendations" vertex="1">
+          <mxGeometry height="60" width="180" x="495" y="3030" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;📈 Real Market Data&lt;/b&gt;&lt;br&gt;Not mock — live Finnhub &amp;amp;&lt;br&gt;Alpha Vantage quotes" vertex="1">
+          <mxGeometry height="60" width="180" x="115" y="3100" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;🎨 Production-Quality UI&lt;/b&gt;&lt;br&gt;Glassmorphism, animations,&lt;br&gt;responsive, dark theme" vertex="1">
+          <mxGeometry height="60" width="180" x="305" y="3100" as="geometry" />
+        </mxCell>
+        <mxCell id="usp-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=center;fontColor=#000000;" value="&lt;b&gt;💰 Paper Trading&lt;/b&gt;&lt;br&gt;\$100K virtual cash with&lt;br&gt;full P&amp;amp;L tracking &amp;amp; reset" vertex="1">
+          <mxGeometry height="60" width="180" x="495" y="3100" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999;dashed=1;opacity=50;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="60" width="500" x="100" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" value="&lt;b&gt;Legend:&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="55" x="110" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-fe" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="170" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-fe-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Frontend" vertex="1">
+          <mxGeometry height="20" width="50" x="190" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-mw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="245" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-mw-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Middleware" vertex="1">
+          <mxGeometry height="20" width="60" x="265" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-be" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="330" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-be-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Backend" vertex="1">
+          <mxGeometry height="20" width="50" x="350" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="405" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-db-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Database" vertex="1">
+          <mxGeometry height="20" width="50" x="425" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="480" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ai-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="AI/Gamification" vertex="1">
+          <mxGeometry height="20" width="80" x="500" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-cache" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="170" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-cache-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Cache" vertex="1">
+          <mxGeometry height="20" width="40" x="190" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ext" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontColor=#000000;" value="" vertex="1">
+          <mxGeometry height="12" width="16" x="245" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ext-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="External APIs" vertex="1">
+          <mxGeometry height="20" width="70" x="265" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-solid" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666;fontColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="158" as="sourcePoint" />
+            <mxPoint x="400" y="158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-solid-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="Data flow" vertex="1">
+          <mxGeometry height="20" width="50" x="405" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-dashed" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#666;dashed=1;fontColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="158" as="sourcePoint" />
+            <mxPoint x="520" y="158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg-dashed-t" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;" value="External call" vertex="1">
+          <mxGeometry height="20" width="65" x="525" y="147" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
